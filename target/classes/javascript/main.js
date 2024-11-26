@@ -259,3 +259,25 @@ function getIPLocation() {
         })
         .catch(err => alert("Error fetching IP-based location: " + err));
 }
+
+const selectContainer = document.querySelector('.custom-select');
+const selectSelected = selectContainer.querySelector('.select-selected');
+const selectItems = selectContainer.querySelector('.select-items');
+const selectOptions = selectItems.querySelectorAll('div');
+const realSelect = selectContainer.querySelector('select');
+
+selectContainer.addEventListener('click', function() {
+    if (selectItems.classList.contains('select-hide')) {
+        selectItems.classList.remove('select-hide');
+    } else {
+        selectItems.classList.add('select-hide');
+    }
+});
+
+selectOptions.forEach(option => {
+    option.addEventListener('click', function() {
+        selectSelected.textContent = option.textContent;
+        realSelect.value = option.textContent.toLowerCase();
+        selectItems.classList.add('select-hide');
+    });
+});

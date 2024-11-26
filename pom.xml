@@ -7,7 +7,12 @@
   <groupId>com.yarbi</groupId>
   <artifactId>demo</artifactId>
   <version>1.0-SNAPSHOT</version>
-
+  <repositories>
+    <repository>
+      <id>com.teamdev</id>
+      <url>https://europe-maven.pkg.dev/jxbrowser/releases</url>
+    </repository>
+  </repositories>
   <name>demo</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -16,7 +21,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <javafx.version>17.0.8</javafx.version>
+    <javafx.version>21</javafx.version>
   </properties>
 
   <dependencies>
@@ -26,21 +31,61 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-web</artifactId>
-            <version>17</version>
-        </dependency>
-        <dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-web</artifactId>
+        <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
-        <version>17</version>
-      </dependency>
-      <dependency>
-          <groupId>org.openjfx</groupId>
-          <artifactId>javafx-fxml</artifactId>
-          <version>17</version>
-      </dependency>
+        <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-graphics</artifactId>
+        <version>${javafx.version}</version>
+        <classifier>win</classifier> <!-- Adjust to 'linux' or 'mac' based on OS -->
+    </dependency>
+    <dependency>
+      <groupId>com.teamdev.jxbrowser</groupId>
+      <artifactId>jxbrowser-cross-platform</artifactId>
+      <version>8.1.0</version>
+      <type>pom</type>
+   </dependency>
+   <dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-server</artifactId>
+    <version>11.0.0</version>  <!-- Adjust if you want a newer version -->
+</dependency>
+
+<dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-servlet</artifactId>
+    <version>11.0.0</version>  <!-- Adjust if you want a newer version -->
+</dependency>
+
+<dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-util</artifactId>
+    <version>11.0.0</version>  <!-- Provides ThreadPool and utilities -->
+</dependency>
+
+<dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-io</artifactId>
+    <version>11.0.0</version>  <!-- Required for IO handling -->
+</dependency>
+    <dependency>
+    <groupId>com.teamdev.jxbrowser</groupId>
+    <artifactId>jxbrowser-javafx</artifactId>
+    <version>8.1.0</version>
+</dependency>
       <dependency>
     <groupId>org.json</groupId>
     <artifactId>json</artifactId>
