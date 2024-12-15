@@ -1,5 +1,6 @@
 package com.yarbi;
 
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
@@ -13,6 +14,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+
 
 public class GeoJSONViewer extends Application {
     @Override

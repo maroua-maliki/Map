@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.yarbi</groupId>
   <artifactId>demo</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -14,16 +12,13 @@
     </repository>
   </repositories>
   <name>demo</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <javafx.version>21</javafx.version>
+    <javafx.version>17.0.8</javafx.version>
   </properties>
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -31,77 +26,65 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-      <dependency>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-web</artifactId>
-        <version>${javafx.version}</version>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-web</artifactId>
+      <version>17</version>
     </dependency>
     <dependency>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-controls</artifactId>
-        <version>${javafx.version}</version>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>17</version>
     </dependency>
     <dependency>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-fxml</artifactId>
-        <version>${javafx.version}</version>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>17</version>
     </dependency>
     <dependency>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-graphics</artifactId>
-        <version>${javafx.version}</version>
-        <classifier>win</classifier> <!-- Adjust to 'linux' or 'mac' based on OS -->
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
     </dependency>
     <dependency>
       <groupId>com.teamdev.jxbrowser</groupId>
       <artifactId>jxbrowser-cross-platform</artifactId>
       <version>8.1.0</version>
       <type>pom</type>
-   </dependency>
-   <dependency>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-server</artifactId>
-    <version>11.0.0</version>  <!-- Adjust if you want a newer version -->
-</dependency>
-
-<dependency>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-servlet</artifactId>
-    <version>11.0.0</version>  <!-- Adjust if you want a newer version -->
-</dependency>
-
-<dependency>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-util</artifactId>
-    <version>11.0.0</version>  <!-- Provides ThreadPool and utilities -->
-</dependency>
-
-<dependency>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-io</artifactId>
-    <version>11.0.0</version>  <!-- Required for IO handling -->
-</dependency>
+    </dependency>
     <dependency>
-    <groupId>com.teamdev.jxbrowser</groupId>
-    <artifactId>jxbrowser-javafx</artifactId>
-    <version>8.1.0</version>
-</dependency>
-      <dependency>
-    <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
-    <version>20240303</version>
-</dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>11.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>11.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-util</artifactId>
+      <version>11.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-io</artifactId>
+      <version>11.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.teamdev.jxbrowser</groupId>
+      <artifactId>jxbrowser-javafx</artifactId>
+      <version>8.1.0</version>
+    </dependency>
   </dependencies>
-
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
@@ -126,7 +109,6 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
-        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.7.1</version>
@@ -136,20 +118,19 @@
           <version>3.0.0</version>
         </plugin>
         <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <configuration>
-                            <mainClass>com.yarbi.GeoJSONViewer</mainClass> <!-- Your main class -->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId>
+          <version>0.0.8</version>
+          <executions>
+            <execution>
+              <id>default-cli</id>
+              <configuration>
+                <mainClass>com.yarbi.GeoJSONViewer</mainClass>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
-
     </pluginManagement>
   </build>
 </project>
